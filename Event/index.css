@@ -1,0 +1,257 @@
+/* General reset and universal box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #0a0b14; /* Dark background */
+    color: #ddd; /* Light text */
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    background: linear-gradient(135deg, #4e53e2, #4d87db); /* Cool gradient */
+    color: white;
+    padding: 50px 30px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 960px;
+    position: relative;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+/* Event Creation Section */
+#event-creation {
+    background: #1e1f29;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 40px;
+    transition: all 0.3s ease-in-out;
+}
+
+#event-creation:hover {
+    transform: scale(1.02);
+}
+
+#event-creation h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #a2b9f7;
+    text-transform: uppercase;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form button {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+}
+
+form input:focus, form button:focus {
+    outline: none;
+    border-color: #4e53e2;
+    box-shadow: 0 0 10px rgba(78, 83, 226, 0.6);
+}
+
+form input {
+    background: #22232a;
+    color: #ddd;
+}
+
+form button {
+    background: #4e53e2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #1f2a8d;
+}
+
+/* Event Listing */
+#event-listing {
+    width: 100%;
+    max-width: 960px;
+    margin-top: 40px;
+}
+
+#event-listing h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #a2b9f7;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#events {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.event {
+    background: #2b2f3b;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.event:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+}
+
+.event .event-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.event .event-details p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #b3b3b3;
+}
+
+.event .event-name {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #a2b9f7;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.event .event-name:hover {
+    color: #4e53e2;
+}
+
+.event .event-date-time {
+    font-size: 1.1rem;
+    color: #bbb;
+}
+
+.event .event-location {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Blob Effect on Background */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(78, 83, 226, 0.3) 10%, rgba(0, 0, 0, 0) 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Animations for Blob */
+@keyframes blob-animation {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(78, 83, 226, 0.1);
+    animation: blob-animation 5s infinite ease-in-out;
+    transform: translate(-50%, -50%);
+}
+
+/* Footer */
+footer {
+    font-size: 1rem;
+    color: #aaa;
+    margin-top: 40px;
+    text-align: center;
+}
+
+footer p {
+    letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 30px 20px;
+    }
+
+    #event-creation, #event-listing {
+        padding: 20px;
+    }
+
+    .event {
+        padding: 15px;
+    }
+
+    form input, form button {
+        font-size: 1rem;
+    }
+
+    .event .event-name {
+        font-size: 1.4rem;
+    }
+
+    .event .event-date-time, .event .event-location {
+        font-size: 1rem;
+    }
+}

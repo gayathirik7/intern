@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogSphere - A Dynamic Blog Platform</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>BlogSphere</h1>
+            <nav>
+                <a href="#" id="home">Home</a>
+                <a href="#create-post" id="create-post-link">Create Post</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Post Creation Form -->
+    <section id="create-post" class="section">
+        <h2>Create a New Post</h2>
+        <form id="post-form">
+            <input type="text" id="title" placeholder="Title" required>
+            <textarea id="content" placeholder="Write your post here..." required></textarea>
+            <input type="text" id="image-url" placeholder="Image URL (optional)">
+            <button type="submit">Publish Post</button>
+        </form>
+    </section>
+
+    <!-- Blog Posts List -->
+    <section id="blog-posts" class="section">
+        <h2>Latest Posts</h2>
+        <div id="posts-container"></div>
+    </section>
+
+    <!-- Single Post View -->
+    <section id="post-view" class="section" style="display: none;">
+        <div id="post-detail">
+            <h2 id="post-title"></h2>
+            <p id="post-date"></p>
+            <img id="post-image" src="" alt="" style="max-width: 100%; height: auto;">
+            <div id="post-content"></div>
+            <hr>
+            <h3>Comments</h3>
+            <div id="comments-container"></div>
+            <textarea id="comment-input" placeholder="Add a comment..."></textarea>
+            <button id="submit-comment">Submit Comment</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 BlogSphere. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
